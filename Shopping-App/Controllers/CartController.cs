@@ -8,7 +8,7 @@ namespace Shopping_App.Controllers
     [ApiController]
     public class CartController : ControllerBase
     {
-        private readonly CartService _cartService;
+        private readonly ICartService _cartService;
         private readonly List<Product> _products = new()
         {
             new Product { Id = 1, Name = "T-Shirt", Description = "Black Bella Canvas", Price = 19.00M, ImageUrl = "https://example.com/tshirt.png" },
@@ -16,7 +16,7 @@ namespace Shopping_App.Controllers
             new Product { Id = 3, Name = "Leather Arm Band", Description = "Genuine Leather", Price = 23.00M, ImageUrl = "https://example.com/armband.png" }
         };
 
-        public CartController(CartService cartService)
+        public CartController(ICartService cartService)
         {
             _cartService = cartService;
         }
